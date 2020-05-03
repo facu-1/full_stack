@@ -50,7 +50,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Editar perfil</a>
-                            <a class="dropdown-item" href="">Log Out</a>
+                            <a class="dropdown-item" href="/logout">Log Out</a>
                         </div>
                     </div>
                     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" />
