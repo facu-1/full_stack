@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //rutas default
 Auth::routes();
 
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //rutas
@@ -31,3 +33,6 @@ Route::get('/contact', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+
+Route::get('/new_role/{name}', 'RoleController@create');
+Route::get('/delete_role/{name}', 'RoleController@delete');
