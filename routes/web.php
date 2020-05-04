@@ -32,5 +32,4 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
-Route::get('/new_role/{name}', 'RoleController@create');
-Route::get('/delete_role/{name}', 'RoleController@delete');
+Route::get('/test', 'GeneralApis@logged');

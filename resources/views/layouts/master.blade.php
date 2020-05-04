@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{asset('js/master.js')}}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>@yield('title')</title>
@@ -32,17 +33,17 @@
                         <a href="/faq" class="nav-link">FAQ</a>
                     </li>
                     <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item d-none" id='registro'>
                         <a href="/register" class="nav-link">Registro</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-none" id="login">
                         <a href="/login" class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/contact" class="nav-link">Contacto</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-auto">
-                    <div class="btn-group dropright mr-2">
+                    <div class="btn-group dropright mr-2 d-none" id="usuario_logueado">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             username

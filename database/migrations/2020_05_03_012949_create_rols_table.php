@@ -18,6 +18,17 @@ class CreateRolsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        // creamos 2 roles por deafult, id=1 para clientes, id=2 para admins
+        DB::table('roles')->insert(
+            array(
+                'name' => 'cliente'
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'name' => 'admin'
+            )
+        );
     }
 
     /**
