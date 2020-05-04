@@ -1,5 +1,5 @@
 window.onload = () => {
-    fetch('http://localhost:8000/api/test')
+    fetch('http://localhost:8000/api/auth')
         .then(function (response) {
             return response.json();
         })
