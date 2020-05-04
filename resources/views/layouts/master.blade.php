@@ -46,8 +46,9 @@
                     <div class="btn-group dropright mr-2 d-none" id="usuario_logueado">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            username
-                            <img src="/img/default.png" alt="" width="30" height="30" class="ml-3 rounded-circle">
+                            <span id="username"></span>
+                            <img id="profile" src="/img/default.png" alt="" width="30" height="30"
+                                class="ml-3 rounded-circle">
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Editar perfil</a>
