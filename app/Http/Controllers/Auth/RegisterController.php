@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'img' => ['file', 'mimes:png,jpg']
         ]);
     }
 
@@ -62,13 +63,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
     protected function create(array $data)
     {
+        $img = $data['img']->store('public');
+        $ruta_img = basename($img);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role_id' => 1 // le asigna por default el id de cliente
+            'role_id' => 1, // le asigna por default el id de cliente
+            'img' => $ruta_img,
         ]);
     }
 }
