@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.alljs')
 
 @section('title', 'Home')
 
@@ -6,6 +6,7 @@
 
 <script>
     let user=@JSON($user); //le pasamos el usurario a javascript
+    let token= @JSON($token);
 </script>
 
 <div id="fill">

@@ -3,6 +3,11 @@
 @section('title', 'Contacto')
 
 @section('cuerpo')
+
+<script>
+    let user=@JSON($user); //le pasamos el usurario a javascript
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-xl-8 offset-xl-2 py-5">

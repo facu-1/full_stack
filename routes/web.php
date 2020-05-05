@@ -26,11 +26,28 @@ Route::get('/', function () {
     if (Auth::check()) { //nos fijamos si el usuario esta logueado
         $user = Auth::user(); //devolvemos el usuario como objeto
     }
-    return view('index', compact('user'));
+    return view('home', compact('user'));
 });
+
+Route::get('/faq', function () {
+    $user = null;
+    if (Auth::check()) { //nos fijamos si el usuario esta logueado
+        $user = Auth::user(); //devolvemos el usuario como objeto
+    }
+    return view('faq', compact('user'));
+});
+
+Route::get('/contact', function () {
+    $user = null;
+    if (Auth::check()) { //nos fijamos si el usuario esta logueado
+        $user = Auth::user(); //devolvemos el usuario como objeto
+    }
+    return view('contact', compact('user'));
+});
+
 
 Route::get('/test', function () {
     $token = csrf_field()->toHtml();
     $user = Auth::user();
-    return view('prueba', compact('token', 'user'));
+    return view('homejs', compact('token', 'user'));
 });

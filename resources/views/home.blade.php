@@ -3,6 +3,11 @@
 @section('title', 'Home')
 
 @section('cuerpo')
+
+<script>
+    let user=@JSON($user); //le pasamos el usurario a javascript
+</script>
+
 <!--Categorias-->
 <nav class="nav nav-pills nav-fill d-inline justify-content-around mx-2">
     <ul class="nav mr-2 ml-2">

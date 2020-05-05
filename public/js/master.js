@@ -1,4 +1,5 @@
 window.onload = () => {
+    console.log(user);
     //manejo de usuarios
     let boton = document.querySelector('div[id=usuario_logueado]');
     let login = document.querySelector('li[id=login]');
@@ -13,9 +14,10 @@ window.onload = () => {
             profile_img_placehoolder.setAttribute('src', '/storage/' + user.img);
         }
         boton.classList.remove('d-none');
+        login.classList.add('d-none');
+        registro.classList.add('d-none');
 
     } else {
-        login.classList.remove('d-none');
-        registro.classList.remove('d-none');
+
     }
 }

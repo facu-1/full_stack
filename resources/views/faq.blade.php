@@ -3,6 +3,11 @@
 @section('title','F.A.Q.')
 
 @section('cuerpo')
+
+<script>
+    let user=@JSON($user); //le pasamos el usurario a javascript
+</script>
+
 <div class="container py-3">
     <div class="row">
         <div class="col-12 mx-auto ">

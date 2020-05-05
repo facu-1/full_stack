@@ -35,10 +35,10 @@
                     <li class="nav-item">
                         <a href="/contact" class="nav-link">Contacto</a>
                     </li>
-                    <li class="nav-item d-none" id='registro'>
+                    <li class="nav-item " id='registro'>
                         <a href="/register" class="nav-link">Registro</a>
                     </li>
-                    <li class="nav-item d-none" id="login">
+                    <li class="nav-item " id="login">
                         <a href="/login" class="nav-link">Login</a>
                     </li>
                 </ul>

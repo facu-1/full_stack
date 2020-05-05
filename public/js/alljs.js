@@ -1,4 +1,5 @@
 window.onload = () => {
+    console.log(user);
     //manejo de usuarios
     let boton = document.querySelector('div[id=usuario_logueado]');
     let login = document.querySelector('li[id=login]');
