@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,15 +22,15 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //rutas
 
 Route::get('/', function () {
-    return view('home');
+    $user = null;
+    if (Auth::check()) { //nos fijamos si el usuario esta logueado
+        $user = Auth::user(); //devolvemos el usuario como objeto
+    }
+    return view('index', compact('user'));
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/test', function () {
+    $token = csrf_field()->toHtml();
+    $user = Auth::user();
+    return view('prueba', compact('token', 'user'));
 });
-
-Route::get('/faq', function () {
-    return view('faq');
-});
-
-Route::get('/test', 'GeneralApis@logged');
