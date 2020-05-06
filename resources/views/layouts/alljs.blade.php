@@ -16,27 +16,27 @@
     <header>
         <!--Barra de navegacion-->
         <nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
-            <a href="/" class="navbar-brand">
+            <span id="home" class="nav-link fake-link">
                 <img src="img/logo.svg" width="60" height="60" alt="logo" />
                 Marca
-            </a>
+            </span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li id="home" class="nav-item active">
                         <span id="home" class="nav-link fake-link"> Home</span>
                     </li>
-                    <li class="nav-item">
+                    <li id="faq" class="nav-item">
                         <span id="faq" class="nav-link fake-link">FAQ</span>
                     </li>
-                    <li class="nav-item">
+                    <li id="contact" class="nav-item">
                         <span id="contact" class="nav-link fake-link">Contacto</span>
                     </li>
                     <li class="nav-item d-none" id='registro'>
-                        <a href="/register" class="nav-link">Registro</a>
+                        <span id="register" class="nav-link fake-link">Registro</span>
                     </li>
                     <li class="nav-item d-none" id="login">
                         <span id="login" class="nav-link fake-link">Login</span>

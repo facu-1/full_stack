@@ -47,7 +47,10 @@ Route::get('/contact', function () {
 
 
 Route::get('/test', function () {
+    $user = null;
+    if (Auth::check()) {
+        $user = Auth::user();
+    }
     $token = csrf_field()->toHtml();
-    $user = Auth::user();
     return view('homejs', compact('token', 'user'));
 });
