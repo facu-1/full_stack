@@ -46,11 +46,4 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('/test', function () {
-    $user = null;
-    if (Auth::check()) {
-        $user = Auth::user();
-    }
-    $token = csrf_field()->toHtml();
-    return view('homejs', compact('token', 'user'));
-});
+Route::get('/alljs', 'htmlController@get'); //retorna la vista de homejs, con todas las variables necesaias a javscript
