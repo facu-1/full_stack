@@ -66,8 +66,12 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        $img = $data['img']->store('public');
-        $ruta_img = basename($img);
+        if (array_key_exists('img', $data)) {
+            $img = $data['img']->store('public');
+            $ruta_img = basename($img);
+        } else {
+            $ruta_img = null;
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
