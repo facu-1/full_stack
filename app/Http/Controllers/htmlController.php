@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class htmlController extends Controller
 {
-    public function get()
+    public function get($pag)
     {
         $user = null;
         if (Auth::check()) {
@@ -24,6 +24,6 @@ class htmlController extends Controller
             ];
         }
         $html_compactado = $html_array;
-        return view('homejs', compact('html_compactado', 'token', 'user'));
+        return view('homejs', compact('html_compactado', 'token', 'user', 'pag'));
     }
 }

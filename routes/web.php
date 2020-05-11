@@ -21,29 +21,4 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //rutas
 
-Route::get('/', function () {
-    $user = null;
-    if (Auth::check()) { //nos fijamos si el usuario esta logueado
-        $user = Auth::user(); //devolvemos el usuario como objeto
-    }
-    return view('home', compact('user'));
-});
-
-Route::get('/faq', function () {
-    $user = null;
-    if (Auth::check()) { //nos fijamos si el usuario esta logueado
-        $user = Auth::user(); //devolvemos el usuario como objeto
-    }
-    return view('faq', compact('user'));
-});
-
-Route::get('/contact', function () {
-    $user = null;
-    if (Auth::check()) { //nos fijamos si el usuario esta logueado
-        $user = Auth::user(); //devolvemos el usuario como objeto
-    }
-    return view('contact', compact('user'));
-});
-
-
-Route::get('/alljs', 'htmlController@get'); //retorna la vista de homejs, con todas las variables necesaias a javscript
+Route::get('/test/{pag}', 'htmlController@get'); //retorna la vista de homejs, con todas las variables necesaias a javscript

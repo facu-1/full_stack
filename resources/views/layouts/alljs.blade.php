@@ -17,7 +17,7 @@
         <!--Barra de navegacion-->
         <nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
             <span id="home" class="nav-link fake-link">
-                <img src="img/logo.svg" width="60" height="60" alt="logo" />
+                <img src="/img/logo.svg" width="60" height="60" alt="logo" />
                 Marca
             </span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -25,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav text-right">
                     <li id="home" class="nav-item active">
                         <span id="home" class="nav-link fake-link"> Home</span>
                     </li>
@@ -42,26 +42,21 @@
                         <span id="login" class="nav-link fake-link">Login</span>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 ml-auto">
-                    <div class="btn-group dropright mr-2 d-none" id="usuario_logueado">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span id="username"></span>
-                            <img id="profile" src="/img/default.png" alt="" width="30" height="30"
-                                class="ml-3 rounded-circle">
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Editar perfil</a>
-                            <a class="dropdown-item" href="/logout">Log Out</a>
+                <div class="btn-group dropleft float-right ml-auto">
+                    <button type="button" class="btn btn-sm rounded-circle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" id="profile-btn">
+                        <div class="image-cropper">
+                            <img id="profile" src="/img/default.png" class="profile-img">
                         </div>
-                    </div>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                        Buscar
                     </button>
-                </form>
+                    <div class="dropdown-menu">
+                        <!-- Dropdown menu links -->
+                    </div>
+                </div>
+
             </div>
         </nav>
+
         <!--Fin de barra de navegacion-->
     </header>
     @yield('cuerpo')
@@ -139,12 +134,12 @@
                     <div id="iconos">
                         <!--Twitter-->
                         <a href="#" class="p-1">
-                            <img src="img/tw.svg" alt="logo_tw" width="40" height="40">
+                            <img src="/img/tw.svg" alt="logo_tw" width="40" height="40">
                         </a>
                         <!--Twitter-->
                         <!-- facebook -->
                         <a href="#" class="p-1">
-                            <img src="img/fb.svg" alt="face_logo" width="40" height="40">
+                            <img src="/img/fb.svg" alt="face_logo" width="40" height="40">
                         </a>
                     </div>
                 </div>
