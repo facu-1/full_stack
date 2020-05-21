@@ -4,21 +4,25 @@ window.onload = () => {
     let boton = document.querySelector('div[id=usuario_logueado]');
     let login = document.querySelector('li[id=login]');
     let registro = document.querySelector('li[id=registro]');
-    // if (user != null) {
-    //     let username_placeholder = document.querySelector('span[id=username]');
-    //     let profile_img_placehoolder = document.querySelector('img[id=profile]');
-    //     let username = document.createTextNode(user.name);
-    //     username_placeholder.append(username);
 
-    //     if (user.img) {
-    //         profile_img_placehoolder.setAttribute('src', '/storage/' + user.img);
-    //     }
-    //     boton.classList.remove('d-none');
 
-    // } else {
-    //     login.classList.remove('d-none');
-    //     registro.classList.remove('d-none');
-    // }
+    if (user != null) {
+        boton.classList.remove('d-none');
+        let username_placeholder = document.querySelector('span[id=username]');
+        let profile_img_placehoolder = document.querySelector('img[id=profile]');
+        let username = document.createTextNode(user.name);
+        username_placeholder.append(username);
+
+        if (user.img) {
+            profile_img_placehoolder.setAttribute('src', '/storage/' + user.img);
+        }
+        boton.classList.remove('d-none');
+
+    } else {
+        boton.classList.add('d-none');
+        login.classList.remove('d-none');
+        registro.classList.remove('d-none');
+    }
 
     //manejo de paginas//
     let fill = document.querySelector('div[id=fill]'); //bloque principal
@@ -89,6 +93,69 @@ window.onload = () => {
         }
     }
 
+
+    function manejo_nav_productos() {
+        //logica de la seccion de productos
+
+        let menu = document.querySelector('div[id=menu]');
+        let lista = document.querySelector('div[id=lista]');
+        let nav = document.querySelector('nav[id=nav]');
+        let productos = document.querySelector('div[id=productos]');
+        console.log(productos.querySelector('div').querySelectorAll('div[id=un_producto]'));
+
+        nav.querySelector('button').onclick = function () {
+            this.querySelector('svg[id=down]').classList.toggle('d-none');
+            this.querySelector('svg[id=right]').classList.toggle('d-none');
+            window.scrollTo(0, 0);
+
+            if (nav.classList.contains('col-12')) { //cuando esta colapsada
+                productos.classList.remove('d-xl-none');
+                productos.classList.add('d-none');
+                document.querySelector('div[id=carrouselprincipal]').classList.add('d-none'); //ocultamos el carrousel
+                document.querySelector('div[id=secciones_home]').classList.add('d-none'); // ocultamos las secciones
+                productos.classList.replace('col-xl-12', 'col-xl-9');
+                productos.classList.remove('mt-4');
+                nav.classList.replace('col-12', 'col-4');
+                nav.classList.add('col-xl-1', 'rounded-right');
+                lista.classList.add('col-8', 'col-xl-2');
+                nav.classList.add('vh-100');
+                productos.querySelector('div').querySelectorAll('div[id=un_producto]').forEach(producto => {
+                    producto.classList.replace('col-xl-3', 'col-xl-4');
+                });
+
+
+                nav.addEventListener('transitionend', function (event) {
+
+                    if (event.propertyName == 'max-width' && this.classList.contains('col-4')) {
+                        lista.classList.replace('d-none', 'd-flex');
+                        $('#lista').collapse('show');
+                        lista.classList.add('vh-100');
+                    }
+                });
+
+            } else if (nav.classList.contains('rounded-right')) { //cuando esta expandida
+                nav.classList.replace('col-4', 'col-12');
+                nav.classList.remove('rounded-right', 'col-xl-1', 'vh-100');
+                lista.classList.remove('col-8', 'col-xl-2');
+                lista.classList.replace('d-flex', 'd-none');
+                lista.classList.remove('vh-100');
+                $('#lista').collapse('hide');
+                productos.classList.replace('col-xl-9', 'col-xl-12');
+                productos.classList.add('mt-4');
+                productos.classList.remove('d-none');
+                productos.querySelector('div').querySelectorAll('div[id=un_producto]').forEach(producto => {
+                    producto.classList.replace('col-xl-4', 'col-xl-3');
+                    productos.classList.add('col-12');
+                });
+
+            }
+        }
+
+
+        //fin de la logica de la seccion de productos
+    }
+
+
     //fin de funciones
 
 
@@ -107,8 +174,12 @@ window.onload = () => {
             pagina_actual.set = 'home';
         }
 
-        if (valor == 'register') {
-            profile_pic_preview();
+        if (valor == 'register') { //cuando estamos en la pagina register
+            profile_pic_preview(); //llamamos a la funcion
+        }
+
+        if (valor == 'home') { //cuando estamos en la pagina del home
+            manejo_nav_productos();  //llamamos a la funcion
         }
 
     }
@@ -124,6 +195,9 @@ window.onload = () => {
             pagina_actual.set = link.getAttribute('id');
         }
     })
+
+
+
 
 
     //muestra de errores y recuperacion de old values

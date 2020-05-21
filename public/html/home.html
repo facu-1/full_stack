@@ -1,44 +1,289 @@
-<!--Categorias-->
-<nav class="nav nav-pills nav-fill d-inline justify-content-around mx-2">
-    <ul class="nav mr-2 ml-2">
-        <li class="nav-item dropdown">
-            <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Zapatillas</a
-            >
-            <div class="dropdown-menu">
-                <a href="/nosabemos" class="dropdown-item">Deportivas</a>
-                <a href="/nosabemos" class="dropdown-item">De vestir</a>
-                <a href="/nosabemos" class="dropdown-item">Trekking</a>
+<!--Productos-->
+<div class="row container-fluid h-100" id="menu">
+    <div class="collapse d-none bg-dark sticky-top" id="lista">
+        <div class="accordion bg-dark my-auto border-0" id="acordeon_lista">
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingOne">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                            Q: How does this work?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseOne"
+                    class="collapse"
+                    aria-labelledby="headingOne"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        <b>Answer:</b> It works using the Bootstrap 4 collapse
+                        component with cards to make a vertical accordion that
+                        expands and collapses as questions are toggled.
+                    </div>
+                </div>
             </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Indumentaria</a
-            >
-            <div class="dropdown-menu">
-                <a href="/nosabemos" class="dropdown-item">Ropa de invierno</a>
-                <a href="/nosabemos" class="dropdown-item">Ropa de verano</a>
-                <a href="/nosabemos" class="dropdown-item">Temporada 2019</a>
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                        >
+                            Q: What is Bootstrap 4?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        Bootstrap is the most popular CSS framework in the
+                        world. The latest version released in 2018 is Bootstrap
+                        4. Bootstrap can be used to quickly build responsive
+                        websites.
+                    </div>
+                </div>
             </div>
-        </li>
-        <li class="nav-item">
-            <a href="/nosabemos" class="nav-link">Accesorios</a>
-        </li>
-    </ul>
-</nav>
-<!--Fin de categorias-->
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingThree">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                        >
+                            Q. What is another question?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        The answer to the question can go here.
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingFour">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseFour"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                        >
+                            Q. What is the next question?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseFour"
+                    class="collapse"
+                    aria-labelledby="headingFour"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        The answer to this question can go here. This FAQ
+                        example can contain all the Q/A that is needed.
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingFive">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseFive"
+                            aria-expanded="false"
+                            aria-controls="collapseFive"
+                        >
+                            Q. What is the next question?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseFive"
+                    class="collapse"
+                    aria-labelledby="headingFive"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        The answer to this question can go here. This FAQ
+                        example can contain all the Q/A that is needed.
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-dark border-0">
+                <div class="card-header p-2 border-0 bg-dark" id="headingSix">
+                    <h5 class="mb-0">
+                        <button
+                            class="btn btn-link collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseSix"
+                            aria-expanded="false"
+                            aria-controls="collapseSix"
+                        >
+                            Q. What is the next question?
+                        </button>
+                    </h5>
+                </div>
+                <div
+                    id="collapseSix"
+                    class="collapse"
+                    aria-labelledby="headingSix"
+                    data-parent="#acordeon_lista"
+                >
+                    <div class="card-body">
+                        The answer to this question can go here. This FAQ
+                        example can contain all the Q/A that is needed.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark col-12 bg-dark sticky-top" id="nav">
+        <button id="boton_productos" class="navbar-toggler mx-auto my-auto">
+            <svg
+                id="down"
+                class="bi bi-arrow-down"
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M4.646 9.646a.5.5 0 01.708 0L8 12.293l2.646-2.647a.5.5 0 01.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 010-.708z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill-rule="evenodd"
+                    d="M8 2.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V3a.5.5 0 01.5-.5z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+            <svg
+                id="right"
+                class="bi bi-arrow-right d-none"
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    fill-rule="evenodd"
+                    d="M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+        </button>
+    </nav>
+    <div class="d-none d-md-block d-xl-none col-xl-12 mt-4" id="productos">
+        <div class="row container-fluid">
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 mb-4" id="un_producto">
+                <div class="card">
+                    <img src="/img/zapas.jpg" class="card-img-top" />
+                    <div class="card-body">
+                        <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fin de Productos-->
 
 <!--Carrousel-->
 <div id="carrouselprincipal" class="carousel slide" data-ride="carousel">
@@ -111,7 +356,7 @@
 </div>
 <!--Fin carrousel-->
 <!--Secciones-->
-<div class="album py-5 bg-light">
+<div class="album py-5 bg-light" id="secciones_home">
     <div class="container">
         <div class="row">
             <div class="col-md-4">

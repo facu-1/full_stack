@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+#usuario_logueado .dropdown-menu {
+    z-index: 1040;
+}
+
 .image-cropper-register {
     width: 150px;
     height: 150px;
@@ -39,3 +43,36 @@
     outline: none;
     box-shadow: none;
 }
+
+/* Seccion de estilos para el nav de productos */
+#nav {
+    transition: all 1000ms;
+}
+#lista {
+    transition: all 1000ms;
+}
+
+#menu.vh-100 {
+    transition: all 1000ms;
+}
+
+.sticky {
+    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+}
+
+@media (max-width: 460px) {
+    /*Medias querys para el celular*/
+    #menu_productos.vh-100 {
+        transition: all 1000ms;
+    }
+
+    #lista {
+        transition: all 1000ms;
+    }
+
+    #nav {
+        transition: all 1000ms;
+    }
+}
+/* Seccion de estilos para el nav de productos */

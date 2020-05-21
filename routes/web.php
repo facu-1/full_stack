@@ -22,3 +22,5 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //rutas
 
 Route::get('/test/{pag}', 'htmlController@get'); //retorna la vista de homejs, con todas las variables necesaias a javscript
+
+Route::get('/producto/{id}', 'productos_controller@mostrar_m_c');

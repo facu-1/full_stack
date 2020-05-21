@@ -32,7 +32,7 @@ $input_fields=['name','email']; //inputs que se pueden recuperar sus valores vie
 @endif
 @endforeach
 
-<div id="fill">
+<div id="fill" class="container-fluid">
 </div>
 
 @endsection

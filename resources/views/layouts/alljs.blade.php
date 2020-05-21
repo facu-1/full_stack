@@ -42,7 +42,7 @@
                         <span id="login" class="nav-link fake-link">Login</span>
                     </li>
                 </ul>
-                <div class="btn-group dropleft float-right ml-auto">
+                <div class="btn-group dropleft float-right ml-auto d-none" id="usuario_logueado">
                     <button type="button" class="btn btn-sm rounded-circle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" id="profile-btn">
                         <div class="image-cropper">
@@ -50,7 +50,13 @@
                         </div>
                     </button>
                     <div class="dropdown-menu">
+                        <a class="dropdown-header">
+                            <span id="username"></span>
+                        </a>
+                        <div class="dropdown-divider"></div>
                         <!-- Dropdown menu links -->
+                        <a class="dropdown-item" href="#">Editar Perfil</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </div>
                 </div>
 
