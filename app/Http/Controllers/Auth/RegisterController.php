@@ -67,7 +67,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if (array_key_exists('img', $data)) {
-            $img = $data['img']->store('public');
+            $img = $data['img']->store('public/img/users');
             $ruta_img = basename($img);
         } else {
             $ruta_img = null;

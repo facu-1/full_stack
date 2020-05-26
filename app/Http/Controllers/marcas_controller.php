@@ -3,29 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\marca;
-use App\producto;
 use Illuminate\Http\Request;
 
-class productos_controller extends Controller
+class marcas_controller extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    // public function mostrar_m_c($id)
-    // {
-    //     $prod = producto::find($id);
-    //     $marca = $prod->categoria->nombre;
-    //     $categoria = $prod->marca->nombre;
-    //     return json_encode($prod);
-    // }
-
-
     public function index()
     {
-        return producto::all();
+        return marca::all();
     }
 
     /**
@@ -52,10 +41,10 @@ class productos_controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\producto  $producto
+     * @param  \App\marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function show(producto $producto)
+    public function show(marca $marca)
     {
         //
     }
@@ -63,10 +52,10 @@ class productos_controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\producto  $producto
+     * @param  \App\marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function edit(producto $producto)
+    public function edit(marca $marca)
     {
         //
     }
@@ -75,10 +64,10 @@ class productos_controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\producto  $producto
+     * @param  \App\marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, producto $producto)
+    public function update(Request $request, marca $marca)
     {
         //
     }
@@ -86,10 +75,10 @@ class productos_controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\producto  $producto
+     * @param  \App\marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function destroy(producto $producto)
+    public function destroy(marca $marca)
     {
         //
     }

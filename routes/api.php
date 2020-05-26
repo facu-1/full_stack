@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/html', 'GeneralApis@get');
+Route::apiResource('productos', 'productos_controller');
+Route::apiResource('categorias', 'categorias_controller');
+Route::apiResource('marcas', 'marcas_controller');
 
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });

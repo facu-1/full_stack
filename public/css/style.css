@@ -56,23 +56,26 @@
     transition: all 1000ms;
 }
 
-.sticky {
-    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1;
+.caja-img-producto {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 370px;
+    overflow: hidden;
+    position: relative;
+}
+.img-producto-list {
+    width: 100%;
+    display: block;
 }
 
-@media (max-width: 460px) {
-    /*Medias querys para el celular*/
-    #menu_productos.vh-100 {
-        transition: all 1000ms;
-    }
-
-    #lista {
-        transition: all 1000ms;
-    }
-
-    #nav {
-        transition: all 1000ms;
-    }
+/* Estilos para el background y la seccion de productos */
+#seccion_productos {
+    background-image: url(../img/2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
-/* Seccion de estilos para el nav de productos */
+#un_producto .card {
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+}

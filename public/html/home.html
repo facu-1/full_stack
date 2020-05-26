@@ -13,7 +13,7 @@
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Q: How does this work?
+                            Categorias
                         </button>
                     </h5>
                 </div>
@@ -21,12 +21,18 @@
                     id="collapseOne"
                     class="collapse"
                     aria-labelledby="headingOne"
-                    data-parent="#acordeon_lista"
+                    data-parent="#headingOne"
                 >
                     <div class="card-body">
-                        <b>Answer:</b> It works using the Bootstrap 4 collapse
-                        component with cards to make a vertical accordion that
-                        expands and collapses as questions are toggled.
+                        <div class="list-group" id="lista_categorias">
+                            <button
+                                type="button"
+                                class="list-group-item list-group-item-action active text-white"
+                                id="all"
+                            >
+                                Todas
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,7 +47,7 @@
                             aria-expanded="false"
                             aria-controls="collapseTwo"
                         >
-                            Q: What is Bootstrap 4?
+                            Marcas
                         </button>
                     </h5>
                 </div>
@@ -49,13 +55,18 @@
                     id="collapseTwo"
                     class="collapse"
                     aria-labelledby="headingTwo"
-                    data-parent="#acordeon_lista"
+                    data-parent="#headingTwo"
                 >
                     <div class="card-body">
-                        Bootstrap is the most popular CSS framework in the
-                        world. The latest version released in 2018 is Bootstrap
-                        4. Bootstrap can be used to quickly build responsive
-                        websites.
+                        <div class="list-group" id="lista_marcas">
+                            <button
+                                type="button"
+                                class="list-group-item list-group-item-action active text-white"
+                                id="all"
+                            >
+                                Todas
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,7 +81,7 @@
                             aria-expanded="false"
                             aria-controls="collapseThree"
                         >
-                            Q. What is another question?
+                            Buscar
                         </button>
                     </h5>
                 </div>
@@ -78,91 +89,18 @@
                     id="collapseThree"
                     class="collapse"
                     aria-labelledby="headingThree"
-                    data-parent="#acordeon_lista"
+                    data-parent="#headingThree"
                 >
                     <div class="card-body">
-                        The answer to the question can go here.
-                    </div>
-                </div>
-            </div>
-            <div class="card text-white bg-dark border-0">
-                <div class="card-header p-2 border-0 bg-dark" id="headingFour">
-                    <h5 class="mb-0">
-                        <button
-                            class="btn btn-link collapsed"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#collapseFour"
-                            aria-expanded="false"
-                            aria-controls="collapseThree"
-                        >
-                            Q. What is the next question?
-                        </button>
-                    </h5>
-                </div>
-                <div
-                    id="collapseFour"
-                    class="collapse"
-                    aria-labelledby="headingFour"
-                    data-parent="#acordeon_lista"
-                >
-                    <div class="card-body">
-                        The answer to this question can go here. This FAQ
-                        example can contain all the Q/A that is needed.
-                    </div>
-                </div>
-            </div>
-            <div class="card text-white bg-dark border-0">
-                <div class="card-header p-2 border-0 bg-dark" id="headingFive">
-                    <h5 class="mb-0">
-                        <button
-                            class="btn btn-link collapsed"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#collapseFive"
-                            aria-expanded="false"
-                            aria-controls="collapseFive"
-                        >
-                            Q. What is the next question?
-                        </button>
-                    </h5>
-                </div>
-                <div
-                    id="collapseFive"
-                    class="collapse"
-                    aria-labelledby="headingFive"
-                    data-parent="#acordeon_lista"
-                >
-                    <div class="card-body">
-                        The answer to this question can go here. This FAQ
-                        example can contain all the Q/A that is needed.
-                    </div>
-                </div>
-            </div>
-            <div class="card text-white bg-dark border-0">
-                <div class="card-header p-2 border-0 bg-dark" id="headingSix">
-                    <h5 class="mb-0">
-                        <button
-                            class="btn btn-link collapsed"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#collapseSix"
-                            aria-expanded="false"
-                            aria-controls="collapseSix"
-                        >
-                            Q. What is the next question?
-                        </button>
-                    </h5>
-                </div>
-                <div
-                    id="collapseSix"
-                    class="collapse"
-                    aria-labelledby="headingSix"
-                    data-parent="#acordeon_lista"
-                >
-                    <div class="card-body">
-                        The answer to this question can go here. This FAQ
-                        example can contain all the Q/A that is needed.
+                        <div class="input-group">
+                            <input
+                                value=""
+                                id="string_busqueda"
+                                type="text"
+                                class="form-control"
+                                placeholder="Empieza a escribir"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,70 +150,30 @@
             </svg>
         </button>
     </nav>
-    <div class="d-none d-md-block d-xl-none col-xl-12 mt-4" id="productos">
-        <div class="row container-fluid">
+    <div
+        class="d-none d-md-block d-xl-none col-xl-12 pt-3"
+        id="seccion_productos"
+    >
+        <div class="row container-fluid" id="productos_container">
             <div class="col-xl-3 mb-4" id="un_producto">
                 <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
-                    <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </p>
+                    <div class="container-fluid caja-img-producto rounded">
+                        <img
+                            src="/img/zapas.jpg"
+                            class="card-img-top img-producto-list"
+                        />
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4" id="un_producto">
-                <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
                     <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
+                        <h5 class="card-title ">Nombre</h5>
+                        <p class="card-text ">
+                            Breve descripcion
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4" id="un_producto">
-                <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
-                    <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4" id="un_producto">
-                <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
-                    <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4" id="un_producto">
-                <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
-                    <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4" id="un_producto">
-                <div class="card">
-                    <img src="/img/zapas.jpg" class="card-img-top" />
-                    <div class="card-body">
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
+
+                        <a href="ahre" class="btn-dark btn">
+                            Ver Mas
+                        </a>
+                        <p class="card-text text-right d-flex float-right mt-2">
+                            Precio
                         </p>
                     </div>
                 </div>

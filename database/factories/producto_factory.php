@@ -19,7 +19,7 @@ $factory->define(producto::class, function (Faker $faker) {
         "precio" => $faker->numberBetween($min = 10, $max = 5000),
         "cantidad" => $faker->numberBetween($min = 1, $max = 200),
         "categoria_id" => $faker->randomElement($categorias)->id,
-        "marca_id" => $faker->randomElement($marcas)->id
-
+        "marca_id" => $faker->randomElement($marcas)->id,
+        "img" => $faker->image('public/storage/img/productos', 640, 480, 'sports', false)
     ];
 });
