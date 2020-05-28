@@ -5,8 +5,7 @@
 @section('cuerpo')
 
 <script>
-    let content=@JSON($html_compactado) //le pasamos el html a javascript
-    let user=@JSON($user); //le pasamos el usurario a javascript
+    let content=@JSON($html) //le pasamos el html a javascript
     let token= @JSON($token);//le pasamos el token a js para poder iniciar sesion
     let pagina=@JSON($pag); //le pasamos que pagina debe mostrar la vista
     let errores={}; //creamos un array de errores
@@ -31,6 +30,9 @@ $input_fields=['name','email']; //inputs que se pueden recuperar sus valores vie
 </script>
 @endif
 @endforeach
+
+<script src="{{asset('js/clean.js')}}"></script>
+
 
 <div id="fill" class="container-fluid">
 </div>

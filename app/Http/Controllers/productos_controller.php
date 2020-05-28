@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\marca;
+use Illuminate\Support\Facades\Auth;
 use App\producto;
 use Illuminate\Http\Request;
 
@@ -14,13 +15,9 @@ class productos_controller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // public function mostrar_m_c($id)
-    // {
-    //     $prod = producto::find($id);
-    //     $marca = $prod->categoria->nombre;
-    //     $categoria = $prod->marca->nombre;
-    //     return json_encode($prod);
-    // }
+    public function mostrar_m_c($id)
+    {
+    }
 
 
     public function index()

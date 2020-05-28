@@ -23,4 +23,9 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/test/{pag}', 'htmlController@get'); //retorna la vista de homejs, con todas las variables necesaias a javscript
 
-Route::get('/producto/{id}', 'productos_controller@mostrar_m_c');
+Route::get('/test/producto/{id}', 'htmlController@prod');
+
+
+//rutas del carrito:
+Route::post('/carritoAdd', 'carritoCompras@add')->middleware('web');
+Route::get('/carritoDelete/{id}', 'carritoCompras@delete');
