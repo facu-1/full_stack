@@ -35,16 +35,17 @@ window.onload = () => {
             console.log('Error en el post', e);
         }
     }
-    function barAnimation(inicio, fin) {
+    function barAnimation(inicio, fin, tiempo) {
         let progress = document.querySelector('.progress');
         let count = inicio;
-        let load = setInterval(animate, 15);
+        let load = setInterval(animate, tiempo);
         function animate() {
             if (count == fin) {
                 if (fin == 100) {
                     progress.style.backgroundColor = '#28a745';
+                    document.querySelector('div[id=addCorrectamente]').classList.remove('d-none');
                 }
-                clearInterval(animate);
+                clearInterval(load);
             } else {
                 count++;
                 progress.style.width = count + '%';
@@ -53,17 +54,17 @@ window.onload = () => {
 
     }
 
-    botonAgregar.onclick = async function () {
+    botonAgregar.onclick = async function (event) {
 
-        console.log(user);
+        event.preventDefault()
+
         if (user != null) {
             document.querySelector('.progress-bar').classList.remove('d-none');
-            barAnimation(0, 50);
+            barAnimation(0, 50, 20);
             let cantidad = parseInt(document.querySelector('select[id=productoCantidad]').value);
             producto.cantidadElegida = cantidad;
             let passed = await postApi('http://localhost:8000/carritoAdd', producto);
-            barAnimation(50, 100);
-            document.querySelector('div[id=addCorrectamente]').classList.remove('d-none');
+            barAnimation(50, 100, 15);
         } else {
             document.querySelector('div[id=addFail]').classList.remove('d-none');
         }

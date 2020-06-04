@@ -22,4 +22,10 @@ class RoleController extends Controller
         $role->delete();
         return view('home');
     }
+
+    public function show()
+    {
+        $rol = Role::find(2);
+        return $rol->usuarios;
+    }
 }

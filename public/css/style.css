@@ -195,3 +195,19 @@ button:focus {
     height: 15px;
     border-radius: 13px;
 }
+
+/*Administracion */
+
+.tabla-admin {
+    height: 90vh;
+}
+
+.imageTableAdmin {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.imageTableAdminUser {
+    max-width: 100px;
+    max-height: 100px;
+}

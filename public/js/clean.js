@@ -205,9 +205,28 @@ const funciones = {
         const proxyBusquedaCategorias = new Proxy(categoriasId, {
             set: function (target, prop, valor) {
                 target[prop] = valor;
-                funciones.clearProducts();
-                let resultado = funciones.searchProducts(data.productos, categoriasId, marcasId, proxyString);
-                funciones.showProducts(resultado, cantidadAMostrar);
+
+                let timer;
+
+                function reguladora(func, delay) {
+                    if (timer) {
+                        return
+                    }
+                    timer = setTimeout(function () {
+                        func();
+                        timer = undefined;
+                    }, delay);
+                }
+
+
+                function toDo() {
+                    let resultado = funciones.searchProducts(data.productos, categoriasId, marcasId, proxyString);
+                    funciones.clearProducts();
+                    funciones.showProducts(resultado, cantidadAMostrar);
+                }
+
+                reguladora(toDo, 100);
+
                 return true;
             }
         })
@@ -216,9 +235,25 @@ const funciones = {
         const proxyBusquedaMarcas = new Proxy(marcasId, {
             set: function (target, prop, valor) {
                 target[prop] = valor;
-                funciones.clearProducts();
-                let resultado = funciones.searchProducts(data.productos, categoriasId, marcasId, proxyString);
-                funciones.showProducts(resultado, cantidadAMostrar);
+                let timer;
+                function reguladora(func, delay) {
+                    if (timer) {
+                        return
+                    }
+                    timer = setTimeout(function () {
+                        func();
+                        timer = undefined;
+                    }, delay);
+                }
+
+
+                function toDo() {
+                    let resultado = funciones.searchProducts(data.productos, categoriasId, marcasId, proxyString);
+                    funciones.clearProducts();
+                    funciones.showProducts(resultado, cantidadAMostrar);
+                }
+
+                reguladora(toDo, 100);
                 return true;
             }
         });
@@ -338,7 +373,7 @@ const funciones = {
 
         window.onscroll = function () {
             if (!flag) {
-                reguladora(endReached, 1000);
+                reguladora(endReached, 100);
             }
 
         }
@@ -380,7 +415,8 @@ const funciones = {
         if (string.length) {
             filter3 = filter2.filter(producto => {
                 let text = producto.nombre + ' ' + producto.descripcion;
-                if (text.search(string) != -1) {
+
+                if (text.toLowerCase().indexOf(string) != -1) {
                     return true;
                 }
             })
@@ -402,12 +438,19 @@ const funciones = {
     },
     createCard: function (arrayProductos) {
         let productosContainer = document.querySelector('div[id=productos_container]');
+        let nav = document.querySelector('nav[id=nav]');
         if (arrayProductos && productosContainer) {
             let fragmento = document.createDocumentFragment();
             arrayProductos.forEach(producto => {
 
                 let parentCard = document.createElement('div');
-                parentCard.classList.add('col-xl-4', 'mb-4');
+
+                if (!nav.classList.contains('col-12')) {
+                    parentCard.classList.add('col-xl-4', 'mb-4');
+                } else {
+                    parentCard.classList.add('col-xl-3', 'mb-4');
+                }
+
                 parentCard.setAttribute('id', 'un_producto');
 
                 let card = document.createElement('div');

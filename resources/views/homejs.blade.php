@@ -3,7 +3,6 @@
 @section('title', 'Home')
 
 @section('cuerpo')
-
 <script>
     let content=@JSON($html) //le pasamos el html a javascript
     let token= @JSON($token);//le pasamos el token a js para poder iniciar sesion

@@ -18,6 +18,11 @@ class CreateCategoriasTable extends Migration
             $table->timestamps();
             $table->string('nombre');
         });
+        DB::table('categorias')->insert(
+            array(
+                'nombre' => 'Sin categoria'
+            )
+        );
     }
 
     /**

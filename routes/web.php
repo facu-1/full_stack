@@ -29,3 +29,30 @@ Route::get('/test/producto/{id}', 'htmlController@prod');
 //rutas del carrito:
 Route::post('/carritoAdd', 'carritoCompras@add')->middleware('web');
 Route::get('/carritoDelete/{id}', 'carritoCompras@delete');
+
+
+//rutas de administrador
+
+Route::get('/admin/{categoria}', 'adminController@show')->middleware('isAdmin');
+
+Route::post('/producto/add', 'productos_controller@store')->middleware('isAdmin');
+
+Route::put('/producto/edit', 'productos_controller@update')->middleware('isAdmin');
+
+Route::delete('/producto/delete', 'productos_controller@destroy')->middleware('isAdmin');
+
+Route::post('/categoria/add', 'categorias_controller@store')->middleware('isAdmin');
+
+Route::put('/categoria/edit', 'categorias_controller@update')->middleware('isAdmin');
+
+Route::delete('/categoria/delete', 'categorias_controller@destroy')->middleware('isAdmin');
+
+Route::post('/marca/add', 'marcas_controller@store')->middleware('isAdmin');
+
+Route::put('/marca/edit', 'marcas_controller@update')->middleware('isAdmin');
+
+Route::delete('/marca/delete', 'marcas_controller@destroy')->middleware('isAdmin');
+
+Route::put('/user/edit', 'user_controller@update')->middleware('isAdmin');
+
+Route::delete('/user/delete', 'user_controller@destroy')->middleware('isAdmin');

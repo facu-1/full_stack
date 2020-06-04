@@ -18,6 +18,11 @@ class CreateMarcasTable extends Migration
             $table->timestamps();
             $table->string('nombre');
         });
+        DB::table('marcas')->insert(
+            array(
+                'nombre' => 'Sin marca'
+            )
+        );
     }
 
     /**

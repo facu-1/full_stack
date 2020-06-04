@@ -57,6 +57,11 @@
                         </a>
                         <div class="dropdown-divider"></div>
                         <!-- Dropdown menu links -->
+                        @if ($user)
+                        @if ($user->role->id==2)
+                        <a class="dropdown-item" href="/admin/home">Administración</a>
+                        @endif
+                        @endif
                         <a class="dropdown-item" href="#">Editar Perfil</a>
                         <a class="dropdown-item" href="/test/showCarrito">Carrito</a>
                         <a class="dropdown-item" href="/logout">Logout</a>
